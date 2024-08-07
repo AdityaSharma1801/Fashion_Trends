@@ -8,8 +8,10 @@ const connectDB = require("./config/db")
 const productroute = require("./routes/productroute");
 
 const PORT = process.env.PORT || 6000 || 8080;
-const app = express();
-connectDB()
+
+connectDB() //it is async function(trans function) doesn't matter where you write it
+const app = express();  //
+
 
 app.use('/', rootroute);
 app.use('/fashiontrends',productroute);
